@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Edit, Trash2, Plus, Image as ImageIcon, Eye } from 'lucide-react';
-import { getAllSliders, deleteSlider } from '../../services/sliderService';
+import { getSliders, deleteSlider } from '../../utils/sliderStorage';
 import ConfirmationModal from './ConfirmationModal';
 import PreviewModal from './PreviewModalSlider';
 import SlidePreview from './SlidePreview';
@@ -12,9 +12,9 @@ const SliderList = ({ onEdit, onAdd }) => {
     const [showPreview, setShowPreview] = useState(false);
     const [previewSlider, setPreviewSlider] = useState(null);
 
-    const fetchSliders = async () => {
+    const fetchSliders = () => {
         try {
-            const data = await getAllSliders();
+            const data = getSliders();
             setSliders(data);
         } catch (error) {
             console.error("Error fetching sliders:", error);
@@ -30,10 +30,10 @@ const SliderList = ({ onEdit, onAdd }) => {
         setShowDeleteConfirm(true);
     };
 
-    const confirmDelete = async () => {
+    const confirmDelete = () => {
         if (sliderToDelete) {
             try {
-                await deleteSlider(sliderToDelete);
+                deleteSlider(sliderToDelete);
                 fetchSliders(); // Refresh list after delete
                 setSliderToDelete(null);
             } catch (error) {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Package } from 'lucide-react';
 import FormCard from './FormCardProduct';
 import ProductCard from "../ProductCard";
 import PreviewModal from "./PreviewModal";
 import { saveProduct } from '../../utils/productStorage';
+import { getCategories } from '../../utils/categoryStorage';
 
 const AddProduct = ({ onCancel, onSave }) => {
   const [data, setData] = useState({
@@ -17,6 +18,11 @@ const AddProduct = ({ onCancel, onSave }) => {
   });
 
   const [showPreview, setShowPreview] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    setCategories(getCategories());
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -61,7 +67,12 @@ const AddProduct = ({ onCancel, onSave }) => {
 
         <div className="flex space-x-4">
           <input name="price" type="number" placeholder="Price" value={data.price} onChange={handleChange} className="w-1/2 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700" />
-          <input name="type" placeholder="Category" value={data.type} onChange={handleChange} className="w-1/2 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700" />
+          <select name="type" value={data.type} onChange={handleChange} className="w-1/2 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700">
+            <option value="">Select Category</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.slug}>{cat.name}</option>
+            ))}
+          </select>
         </div>
 
         <input name="compatibleDevices" placeholder="Compatible Devices (comma separated)" value={data.compatibleDevices} onChange={handleChange} className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700" />

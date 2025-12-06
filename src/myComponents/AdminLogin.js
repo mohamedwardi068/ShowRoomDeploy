@@ -1,39 +1,32 @@
 // components/AdminLogin.js
 import React, { useState } from 'react';
 import { Lock, LogOut } from 'lucide-react';
+import { authenticateAdmin } from '../utils/adminStorage';
 
 const AdminLogin = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:8000/api/admin/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username, password })
-      });
+      const result = authenticateAdmin(username, password);
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.message || "Invalid credentials");
+      if (!result.success) {
+        alert(result.message || "Invalid credentials");
         return;
       }
 
       // Save token
-      localStorage.setItem("adminToken", data.token);
+      localStorage.setItem("adminToken", result.token);
 
       // Mark as logged in
       onLogin(true);
 
     } catch (err) {
       console.error(err);
-      alert("Cannot connect to server");
+      alert("Login failed. Please try again.");
     }
   };
 

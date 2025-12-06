@@ -70,7 +70,7 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <Router>
+  <Router basename="/ShowRoomDeploy">
     <AppContent />
   </Router>
 );

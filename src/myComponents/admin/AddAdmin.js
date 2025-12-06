@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserPlus } from 'lucide-react';
 import FormCard from './FormCard';
+import { addAdmin } from '../../utils/adminStorage';
 
 const AddAdmin = () => {
   const [data, setData] = useState({
@@ -11,27 +12,15 @@ const AddAdmin = () => {
   const handleChange = (e) =>
     setData({ ...data, [e.target.name]: e.target.value });
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     try {
-      const token = localStorage.getItem("adminToken");
-
-      const res = await fetch("http://localhost:8000/api/admin/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await res.json();
-
-      if (!res.ok) {
-        alert(result.message || "Error creating admin");
+      if (!data.username || !data.password) {
+        alert('Please fill in all fields');
         return;
       }
 
-      alert("Admin created successfully");
+      addAdmin(data.username, data.password);
+      alert('Admin created successfully');
 
       setData({
         username: '',
@@ -39,7 +28,7 @@ const AddAdmin = () => {
       });
     } catch (err) {
       console.error(err);
-      alert("Cannot connect to server");
+      alert('Failed to create admin');
     }
   };
 

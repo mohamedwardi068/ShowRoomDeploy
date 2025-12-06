@@ -4,7 +4,7 @@ import FormCard from './FormCardSlider';
 import SlidePreview from './SlidePreview';
 import PreviewModal from './PreviewModalSlider';
 
-import { createSlider } from '../../services/sliderService';
+import { saveSlider } from '../../utils/sliderStorage';
 
 const AddSlider = ({ onCancel, onSave }) => {
   const [data, setData] = useState({
@@ -24,13 +24,13 @@ const AddSlider = ({ onCancel, onSave }) => {
     setData({ ...data, [name]: value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!data.image || !data.title) {
       alert('Please fill in at least the Image URL and Title.');
       return;
     }
     try {
-      await createSlider(data);
+      saveSlider(data);
       alert('Slider Added Successfully!');
       if (onSave) onSave();
       setData({

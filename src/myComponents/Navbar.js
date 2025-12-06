@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate("/")}>
           <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
-          <span className="text-xl font-bold">BlackWave</span>
+          <span className="text-xl font-bold">ShowRoom</span>
         </div>
 
         {/* Desktop Navigation */}

@@ -4,7 +4,7 @@ import FormCard from './FormCardSlider';
 import SlidePreview from './SlidePreview';
 import PreviewModal from './PreviewModalSlider';
 import ConfirmationModal from './ConfirmationModal';
-import { updateSlider } from '../../services/sliderService';
+import { updateSlider } from '../../utils/sliderStorage';
 
 const EditSlider = ({ slider, onCancel, onSave }) => {
     const [data, setData] = useState({
@@ -40,12 +40,12 @@ const EditSlider = ({ slider, onCancel, onSave }) => {
         setShowUpdateConfirm(true);
     };
 
-    const confirmUpdate = async () => {
+    const confirmUpdate = () => {
         try {
             // Use id or _id, whichever exists
             const sliderId = data._id || data.id;
             const { _id, id, createdAt, updatedAt, __v, ...updateData } = data;
-            await updateSlider(sliderId, updateData);
+            updateSlider(sliderId, updateData);
             alert('Slider Updated Successfully!');
             if (onSave) onSave();
         } catch (error) {

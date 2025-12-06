@@ -15,7 +15,7 @@ const Footer = () => {
           onClick={() => navigate("/")} // navigate to home
         >
           <img src={logo} alt="BlackWave Logo" className="w-8 h-8 object-contain" />
-          <span className="text-xl font-bold text-white">BlackWave</span>
+          <span className="text-xl font-bold text-white">ShowRoom</span>
         </div>
 
         {/* Links */}

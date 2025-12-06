@@ -5,6 +5,7 @@ import ProductCard from "../ProductCard";
 import PreviewModal from "./PreviewModal";
 import ConfirmationModal from './ConfirmationModal';
 import { updateProduct } from '../../utils/productStorage';
+import { getCategories } from '../../utils/categoryStorage';
 
 const EditProduct = ({ product, onCancel, onSave }) => {
     const [data, setData] = useState({
@@ -17,6 +18,12 @@ const EditProduct = ({ product, onCancel, onSave }) => {
         rating: '',
         isHot: false,
     });
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        setCategories(getCategories());
+    }, []);
 
     useEffect(() => {
         if (product) {
@@ -83,13 +90,17 @@ const EditProduct = ({ product, onCancel, onSave }) => {
                         onChange={handleChange}
                         className="w-1/2 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700"
                     />
-                    <input
+                    <select
                         name="type"
-                        placeholder="Category"
                         value={data.type}
                         onChange={handleChange}
                         className="w-1/2 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700"
-                    />
+                    >
+                        <option value="">Select Category</option>
+                        {categories.map((cat) => (
+                            <option key={cat.id} value={cat.slug}>{cat.name}</option>
+                        ))}
+                    </select>
                 </div>
 
                 <input

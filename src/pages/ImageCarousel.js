@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight, ShoppingCart, ArrowRight } from "lucide-react";
-import { getAllSliders } from "../services/sliderService";
+import { getSliders } from "../utils/sliderStorage";
 
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,9 +14,9 @@ const ImageCarousel = () => {
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
-    const fetchSlides = async () => {
+    const fetchSlides = () => {
       try {
-        const data = await getAllSliders();
+        const data = getSliders();
         setSlides(data);
       } catch (error) {
         console.error("Error fetching slides:", error);
