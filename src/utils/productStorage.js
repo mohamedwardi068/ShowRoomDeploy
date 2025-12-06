@@ -82,6 +82,26 @@ const defaultProducts = [
         rating: 4,
         isHot: false,
     },
+    {
+        id: "AD_06",
+        name: "USB-C to 3.5mm Audio Jack",
+        price: 22,
+        image: "https://placehold.co/300x400/f3f4f6/9ca3af?text=Audio+Jack",
+        type: "adapters",
+        compatibleDevices: ["Samsung", "Google Pixel", "iPad Pro"],
+        rating: 4,
+        isHot: false,
+    },
+    {
+        id: "AD_07",
+        name: "Thunderbolt 3 to Dual HDMI",
+        price: 68,
+        image: "https://placehold.co/300x400/f3f4f6/9ca3af?text=Dual+HDMI",
+        type: "adapters",
+        compatibleDevices: ["MacBook Pro", "Dell XPS"],
+        rating: 5,
+        isHot: true,
+    },
 
     // CHARGERS
     {
