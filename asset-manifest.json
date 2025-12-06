@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mohamedwardi068/ShowRoomDeploy/static/css/main.ec61650e.css",
+    "main.js": "/mohamedwardi068/ShowRoomDeploy/static/js/main.dd0ecd82.js",
+    "static/media/logoImg.png": "/mohamedwardi068/ShowRoomDeploy/static/media/logoImg.9b6a5acb02c2cbfa7d1e.png",
+    "static/media/logoWhite.png": "/mohamedwardi068/ShowRoomDeploy/static/media/logoWhite.9b6a5acb02c2cbfa7d1e.png",
+    "index.html": "/mohamedwardi068/ShowRoomDeploy/index.html",
+    "main.ec61650e.css.map": "/mohamedwardi068/ShowRoomDeploy/static/css/main.ec61650e.css.map",
+    "main.dd0ecd82.js.map": "/mohamedwardi068/ShowRoomDeploy/static/js/main.dd0ecd82.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec61650e.css",
+    "static/js/main.dd0ecd82.js"
+  ]
+}
