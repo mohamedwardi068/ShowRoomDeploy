@@ -40,7 +40,7 @@ const AdminLogin = ({ onLogin }) => {
         <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="text"
-            placeholder="Username"
+            placeholder="admin"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-blue-500"
@@ -48,7 +48,7 @@ const AdminLogin = ({ onLogin }) => {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="admin"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-blue-500"

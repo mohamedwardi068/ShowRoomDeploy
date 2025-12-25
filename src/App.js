@@ -27,7 +27,7 @@ import Shipping from "./pages/Shipping"; // <-- import Shipping
 
 const AppContent = () => {
   const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith("/admin");
+  const isAdminRoute = location.pathname.toLowerCase().startsWith("/admin");
 
   return (
     <div className="App flex flex-col min-h-screen">
