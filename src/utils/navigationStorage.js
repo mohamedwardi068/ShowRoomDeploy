@@ -1,60 +1,30 @@
-const STORAGE_KEY = 'navigation_items';
+const STORAGE_KEY = 'navigation_items_v2';
 
 const defaultNavigationItems = [
     {
         title: "Data Cables",
         slug: "data-cables",
-        items: [
-            { id: "DC_01", title: "Fast Data Cable USB-C" },
-            { id: "DC_02", title: "Premium Braided Lightning" },
-            { id: "DC_03", title: "Micro USB Cable 2M" },
-            { id: "DC_04", title: "AUX Cable 3.5mm" },
-            { id: "DC_05", title: "Audio Adapter Jack" }
-        ]
+        items: []
     },
     {
         title: "Adapters",
         slug: "adapters",
-        items: [
-            { id: "BC_01", title: "USB-C to USB Adapter" },
-            { id: "BC_02", title: "Lightning to USB-C" },
-            { id: "BL_01", title: "Type-C to HDMI" },
-            { id: "AD_01", title: "Multi-Port USB Hub" },
-            { id: "AD_02", title: "USB-C to VGA" }
-        ]
+        items: []
     },
     {
         title: "Chargers",
         slug: "chargers",
-        items: [
-            { id: "CH_01", title: "Fast Wall Charger 20W" },
-            { id: "CH_02", title: "Dual USB Wall Charger" },
-            { id: "CH_03", title: "USB-C PD Charger" },
-            { id: "CH_04", title: "Wireless Charging Pad" },
-            { id: "CH_05", title: "3-in-1 Wireless Charger" }
-        ]
+        items: []
     },
     {
         title: "Earphones",
         slug: "earphones",
-        items: [
-            { id: "EP_01", title: "USB-C Wired Earphones" },
-            { id: "EP_02", title: "Lightning Earphones" },
-            { id: "EP_03", title: "3.5mm Jack Earphones" },
-            { id: "EP_04", title: "USB-C Noise Cancelling" },
-            { id: "EP_05", title: "Premium Lightning" }
-        ]
+        items: []
     },
     {
         title: "Car Charger",
         slug: "car-charger",
-        items: [
-            { id: "CC_01", title: "Dual Port Car Charger" },
-            { id: "CC_02", title: "Fast Car Charger PD" },
-            { id: "CC_03", title: "Car Charger Lightning" },
-            { id: "CC_04", title: "High Power 45W" },
-            { id: "CC_05", title: "Mini Car Charger" }
-        ]
+        items: []
     },
     {
         title: "Glass Protection",
