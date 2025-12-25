@@ -4,11 +4,11 @@ import ProductModal from "../myComponents/ProductModal";
 
 // All products (you can keep more items here if needed)
 const allProducts = [
-  { id: 1, name: "Earphones", price: 59.99, image: "https://via.placeholder.com/150", category: "Earphones", categorySlug: "earphones" },
-  { id: 2, name: "Glass Protectoion", price: 14.99, image: "https://via.placeholder.com/150", category: "glass-protection", categorySlug: "glass-protection" },
-  { id: 3, name: "Charger", price: 29.99, image: "https://via.placeholder.com/150", category: "Chargers", categorySlug: "chargers" },
-  { id: 4, name: "Cables", price: 19.99, image: "https://via.placeholder.com/150", category: "Cables", categorySlug: "cables" },
-  { id: 5, name: "Car Charger", price: 24.99, image: "https://via.placeholder.com/150", category: "Chargers", categorySlug: "chargers" },
+  { id: 1, name: "Earphones", price: 59.99, image: "https://t4.ftcdn.net/jpg/10/56/66/65/360_F_1056666546_5yA2wRTx33DUB1RaKP0Xd1nGecPlvaHb.jpg", category: "Earphones", categorySlug: "earphones" },
+  { id: 2, name: "Glass Protectoion", price: 14.99, image: "https://png.pngtree.com/png-clipart/20230131/ourmid/pngtree-anti-crack-tempered-glass-logo-png-image_6577027.png", category: "glass-protection", categorySlug: "glass-protection" },
+  { id: 3, name: "Charger", price: 29.99, image: "https://t.pimg.jp/092/860/826/1/92860826.jpg", category: "Chargers", categorySlug: "chargers" },
+  { id: 4, name: "Cables", price: 19.99, image: "https://static.thenounproject.com/png/884572-200.png", category: "Cables", categorySlug: "cables" },
+  { id: 5, name: "Car Charger", price: 24.99, image: "https://www.shutterstock.com/image-vector/usb-car-charger-line-icon-260nw-2145857033.jpg", category: "Chargers", categorySlug: "chargers" },
 ];
 
 // Only show these categories

@@ -21,6 +21,7 @@ const ProductsGrid = () => {
     return allProducts.map(p => ({
       ...p,
       categorySlug: p.type ? p.type.toLowerCase().replace(/\s+/g, "-") : "unknown",
+      connector: p.connector || "Universal", // Ensure connector is available
     }));
   }, []);
 
@@ -31,7 +32,7 @@ const ProductsGrid = () => {
         return products.filter(
           (p) =>
             p.categorySlug === "earphones" &&
-            p.type?.toLowerCase() === earphoneSubFilter.toLowerCase()
+            p.connector === earphoneSubFilter // Filter by connector (Type-C, Jack, etc.)
         );
       }
       return products.filter((p) => p.categorySlug === "earphones");
@@ -45,7 +46,7 @@ const ProductsGrid = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* MAIN CATEGORY FILTER BUTTONS */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
+        <div className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-4 mb-6 overflow-x-auto pb-2 px-2 sm:px-0">
           {mainFilters.map((filter, idx) => {
             const slug = filterSlugs[idx];
             return (
@@ -55,7 +56,7 @@ const ProductsGrid = () => {
                   setActiveFilter(slug);
                   setEarphoneSubFilter(slug === "earphones" ? "all" : null);
                 }}
-                className={`px-8 py-3 text-lg font-bold uppercase tracking-widest transition-all duration-300 border-b-4 rounded-t-lg ${activeFilter === slug
+                className={`px-4 py-2 text-sm sm:px-8 sm:py-3 sm:text-lg font-bold uppercase tracking-widest transition-all duration-300 border-b-4 rounded-t-lg ${activeFilter === slug
                   ? "border-blue-700 text-gray-900 shadow-lg shadow-blue-200/50"
                   : "border-transparent text-gray-500 hover:text-blue-700 hover:border-blue-300"
                   }`}
@@ -68,12 +69,12 @@ const ProductsGrid = () => {
 
         {/* EARPHONES SUB-FILTERS */}
         {activeFilter === "earphones" && (
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex justify-start sm:justify-center gap-2 sm:gap-4 mb-10 overflow-x-auto pb-2 px-4 no-scrollbar">
             {["all", "Type-C", "Jack", "Lightning"].map((t) => (
               <button
                 key={t}
                 onClick={() => setEarphoneSubFilter(t)}
-                className={`px-6 py-2 rounded-full border text-sm ${earphoneSubFilter === t
+                className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-full border text-xs sm:text-sm whitespace-nowrap ${earphoneSubFilter === t
                   ? "bg-blue-600 text-white border-blue-700"
                   : "border-gray-400 text-gray-600 hover:bg-gray-100"
                   }`}
