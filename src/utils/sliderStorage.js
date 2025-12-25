@@ -3,7 +3,7 @@ const STORAGE_KEY = 'admin_sliders';
 const defaultSliders = [
     {
         _id: 'slider_1',
-        image: 'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?w=1200&h=700&fit=crop',
+        image: 'https://img.freepik.com/premium-photo/flat-lay-black-tech-gadgets-accessories-dark-background_14117-687959.jpg',
         title: 'Premium Accessories for Every Device',
         description: 'Discover our wide selection of high-quality chargers, cables, and adapters designed for maximum compatibility and durability.',
         button1: 'Shop Now',
@@ -13,7 +13,7 @@ const defaultSliders = [
     },
     {
         _id: 'slider_2',
-        image: 'https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=1200&h=700&fit=crop',
+        image: 'https://freerangestock.com/sample/131643/iphone-box-on-black-background-.jpg',
         title: 'Fast Charging Solutions',
         description: 'Power up your devices quickly with our range of fast chargers and wireless charging pads. Compatible with all major brands.',
         button1: 'View Chargers',
@@ -23,7 +23,7 @@ const defaultSliders = [
     },
     {
         _id: 'slider_3',
-        image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&h=700&fit=crop',
+        image: 'https://static.vecteezy.com/system/resources/thumbnails/044/157/567/small/black-headphones-digital-device-detailed-high-quality-free-photo.jpg',
         title: 'Quality Earphones & Audio',
         description: 'Experience crystal-clear sound with our premium earphones collection. From USB-C to Lightning, we have the perfect audio solution.',
         button1: 'Browse Audio',

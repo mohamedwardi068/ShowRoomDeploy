@@ -5,7 +5,7 @@ const defaultAdmins = [
     {
         id: 'admin_1',
         username: 'admin',
-        password: 'admin123', // In a real app, this would be hashed
+        password: 'admin', // In a real app, this would be hashed
     }
 ];
 
